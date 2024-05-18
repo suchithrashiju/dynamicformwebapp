@@ -28,17 +28,25 @@ Dynamic Form App is a web application built with Laravel 11 that allows users to
     cd dynamicformwebapp
     ```
 2.  **Install PHP dependencies:**
+
+    ```bash
     composer install
+    ```
 
 3.  **Install JavaScript dependencies:**
+
+    ```bash
     npm install
     npm run dev
+    ```
 
 4.  **Copy the .env.example file to .env:**
     cp .env.example .env
 
 5.  **Set up your .env file:**
     Update the .env file with your database credentials and other necessary configuration.
+
+    ```bash
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
@@ -56,6 +64,9 @@ Dynamic Form App is a web application built with Laravel 11 that allows users to
     MAIL_FROM_NAME="${APP_NAME}"
 
     EMAIL_RECIPIENT=demo@gmail.com
+
+
+    ```
 
 6.  **Generate an application key:**
     php artisan key:generate
