@@ -90,7 +90,7 @@ This command will generate a new job class named SendEmailNotification. You can 
   php artisan serve
 ```
 
-10. **Run queue jos:**
+10. **Run queue jobs:**
 
 ```bash
 php artisan queue:work --queue=emails
