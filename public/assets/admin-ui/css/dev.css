@@ -1,0 +1,24 @@
+/*.field-container-group {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}*/
+.field-container-sec {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.preview-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    min-height: 800px; /* Adjust height as needed */
+    min-height: auto; /* Adjust height as needed */
+    overflow-y: auto; /* Add vertical scroll if needed */
+}
+.error {
+    color: red;
+    font-size: 12px;
+}
