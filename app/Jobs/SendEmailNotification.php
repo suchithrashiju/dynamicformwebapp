@@ -25,10 +25,14 @@ class SendEmailNotification implements ShouldQueue
      */
     public function handle(): void
     {
-        $recipientEmail = $this->formData['email'];
+        $recipientEmail = $this->formData['recipient_email'];
         $subject = $this->formData['subject'];
-        $data = ['name' => $this->formData['name']];
+        $data = [
+            'name' => $this->formData['name'],
+            'subject' => $this->formData['subject'],
+            'recipientEmail' => $this->formData['recipient_email'],
+        ];
 
-        \Mail::to($recipientEmail)->send(new \App\Mail\FormSubmissionNotification($subject, $data));
+        \Mail::to($recipientEmail)->send(new \App\Mail\FormSubmissionNotification($data));
     }
 }

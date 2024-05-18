@@ -74,9 +74,27 @@ Dynamic Form App is a web application built with Laravel 11 that allows users to
     php artisan migrate
 8.  **Seed the database:**
     php artisan db:seed
+9.  **Create a job for sending email notifications on successful form creation:**
+
+```bash
+
+php artisan make:job SendEmailNotification
+
+```
+
+This command will generate a new job class named SendEmailNotification. You can then implement the logic for sending email notifications in this job.
 
 9.  **Start the development server:**
-    php artisan serve
+
+```bash
+  php artisan serve
+```
+
+10. **Run queue jos:**
+
+```bash
+php artisan queue:work --queue=emails
+```
 
 Usage
 Admin Dashboard

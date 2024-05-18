@@ -24,6 +24,7 @@ class DynamicFormController extends Controller
 
     public function store(Request $request)
     {
+
         $rules = [
             'form_name' => 'required|string|max:255|unique:dynamic_forms,form_name',
             'description' => 'nullable|string',
@@ -60,9 +61,9 @@ class DynamicFormController extends Controller
 
         $validatedData = $validator->validated();
 
-
+        $form_name = $request->input('form_name');
         $dynamicForm = new DynamicForm();
-        $dynamicForm->form_name = $request->input('form_name');
+        $dynamicForm->form_name = $form_name;
         $dynamicForm->description = $request->input('description');
         $dynamicForm->is_active = $request->has('is_active');
 
@@ -86,13 +87,11 @@ class DynamicFormController extends Controller
                 'form_field_details' => $fieldData['form_field_details'] ?? null,
             ]);
         }
-
+        $recipientEmail =  config('myconfig.email_recipient');
         $formData = [
-            'recipient_email' => env('EMAIL_RECIPIENT'),
+            'recipient_email' => $recipientEmail,
             'subject' => 'New Dynamic Form Successfully Created.',
-            'data' => [
-                'form_name' => $validatedData['form_name'],
-            ],
+            'name' => $dynamicForm->form_name,
         ];
         SendEmailNotification::dispatch($formData)->onQueue('emails');
         return response()->json(['message' => 'Form created successfully'], 200);
