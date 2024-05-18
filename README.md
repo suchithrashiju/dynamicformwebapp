@@ -24,8 +24,8 @@ Dynamic Form App is a web application built with Laravel 11 that allows users to
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/dynamicformapp.git
-    cd dynamicformapp
+    git clone https://github.com/suchithrashiju/dynamicformwebapp.git
+    cd dynamicformwebapp
     ```
 2.  **Install PHP dependencies:**
     composer install
