@@ -96,7 +96,8 @@ This command will generate a new job class named SendEmailNotification. You can 
 php artisan queue:work --queue=emails
 ```
 
-Usage
+**Usage**
+
 Admin Dashboard
 
     Admin Login:
