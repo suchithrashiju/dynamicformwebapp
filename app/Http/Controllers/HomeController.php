@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $forms = DynamicForm::all();
+        $forms = DynamicForm::where('is_active', 1)->get();
         return view('dynamicformlist', compact('forms'));
     }
     public function show($id)
