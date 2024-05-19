@@ -21,9 +21,10 @@ class FormSubmissionNotification extends Mailable
     public function build()
     {
 
-        return $this->subject('New Dynamic Form Created')
-                    ->view('emails.form_submission_notification')
-                    ->with(['submissionData' => $this->submissionData]);
+        return $this->from(config('mail.from.address'), config('mail.from.name'))
+        ->subject('New Dynamic Form Created')
+        ->view('emails.form_submission_notification')
+        ->with(['submissionData' => $this->submissionData]);
 
     }
 }

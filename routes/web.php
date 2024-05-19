@@ -6,6 +6,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 
+use App\Mail\FormSubmissionNotification;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/dynamicForm/{id}', [HomeController::class, 'show'])->name('show');
@@ -38,5 +40,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
 
 });
+
+
+
+
+Route::get('/send-test-email', function () {
+    $submissionData = [
+        'name' =>" Dyanm name",
+        'subject' => " Dynam Subject",
+        'recipientEmail' => 'suchisunsan.s@gmail.com',
+    ];
+
+
+    Mail::to('suchisunsan.s@gmail.com')->send(new FormSubmissionNotification($submissionData));
+
+    return 'Test email sent!';
+});
+
 
 // require __DIR__.'/auth.php';
