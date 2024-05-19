@@ -33,6 +33,8 @@
                                 </div>
                                 <div class="form-group text-center">
                                     <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
+                                    <a href="{{ route('index') }}" class="btn btn-primary">{{ __('Cancel') }}</a>
+
                                 </div>
                             </form>
                         </div>
